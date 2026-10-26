@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'registration'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'registration.Main'
+}
+
+// Чтобы Scanner получал ввод с клавиатуры при запуске через `gradle run`
+run {
+    standardInput = System.in
+}
