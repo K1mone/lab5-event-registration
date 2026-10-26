@@ -10,10 +10,9 @@ repositories {
     mavenCentral()
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+// Компилируем под Java 17, запускать можно на любом JDK 17+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
 }
 
 application {
